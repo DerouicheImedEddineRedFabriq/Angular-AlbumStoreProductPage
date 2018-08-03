@@ -9,7 +9,9 @@ import { ProductDescriptionComponent } from './product-description/product-descr
 import { ProductService } from './product.service';
 import { ProductTracklistingComponent } from './product-tracklisting/product-tracklisting.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { RouterModule, Routes} from '@angular/router'
+import { RouterModule, Routes} from '@angular/router';
+import { HttpClient} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [{path: 'products', component: ProductListComponent}
 , {path: 'product/:id', component: ProductPageComponent}
@@ -27,6 +29,7 @@ const appRoutes: Routes = [{path: 'products', component: ProductListComponent}
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [ProductService],
